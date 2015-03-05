@@ -253,27 +253,91 @@
           </p>
         </section>
         <section>
-          <h2>Beyond PubRules</h2>
+          <h2>Document Structure Beyond PubRules</h2>
           <p>
-            
+            The <a href="http://www.w3.org/2014/10/pubrules/">new PubRules</a> system 
+            (<a href="https://github.com/w3c/specberus">Specberus</a>) is a welcome improvement in
+            the toolbox. It still needs some UI fixes and should be moved to a location not intended
+            to make it impossible to find but overall it should soon be able to replace the previous
+            instantiation.
+          </p>
+          <p>
+            We should, however, think beyond specification validation. As things stand today, it is
+            extremely hard to get information out of our documents. Even when they are correct, they
+            are all different. The RDF export is a very partial view and borderline unusable. The
+            data that is extracted into W3C’s systems cannot be obtained, and is partial as well.
+            Yet so much can be done with this information.
+          </p>
+          <p>
+            We need to progressively refine the <em>components</em> that make up a specification and
+            to rethink them using modern HTML constructs for document semantics and metadata. Step
+            by step we need to start unifying these constructs across the board (having tools
+            produce them and enforcing them through PubRules). Document structure and metadata needs
+            to become eventually regular enough that TR can be used as an API.
           </p>
         </section>
         <section>
           <h2>Specification Production Tools</h2>
           <p>
-            
+            We have quality specification production tools and most specifications today make use of
+            them. It is worth thinking about how, as a common ecosystem, they can be improved.
+          </p>
+          <p>
+            One aspect in which they can be improved is to bring their source formats in line
+            wherever it makes sense (and isn't disruptive). The end goal here is that contributors
+            to specifications who move between groups should as much as possible find themselves
+            able to switch between tools as easily as possible.
+          </p>
+          <p>
+            This, naturally, should not be done at the cost of innovation in those tools, but it
+            surely can be done for some of the common, well-understood aspects.
           </p>
         </section>
         <section>
           <h2>Cross-References Support</h2>
           <p>
-            
+            The Web platform is increasingly described by a large mesh of specifications that
+            reference one another. Currently, this is done relatively poorly overall. There are
+            several methods in use:
+          </p>
+          <ul>
+            <li>
+              Handwave about doing something the way another specification says to do it, with a
+              reference to the whole document.
+            </li>
+            <li>
+              Link to a definition in another specification, which can break (as has happened
+              several times for people referencing HTML), and sometimes forget to include a formal
+              reference.
+            </li>
+            <li>
+              List imported definitions from other specifications, with links and references, and
+              then use internal references to those. This is likely the best option available today,
+              but it is cumbersome work.
+            </li>
+          </ul>
+          <p>
+            Ideally, all definitions from all specifications should be globally available. This
+            would make it possible to simply reference them in a specification tool source format
+            and get the correct link and reference handled. It would enable the generation of
+            glossaries. We could expose a searchable interface that would make it possible for
+            people to find which specification defines what, and which make use of what concept or
+            construct (something that would prove invaluable in coordination).
           </p>
         </section>
         <section>
           <h2>SpecRef</h2>
           <p>
-            
+            <a href="https://github.com/tobie/specref">SpecRef</a> is the database of
+            bibliographical references that specifications rely upon. It has been through several
+            iterations and is generally considered good, but it can be improved.
+          </p>
+          <p>
+            It is currently managed by Tobie, it could be brought under W3C management.
+          </p>
+          <p>
+            It could use a front-end and a few other niceties to integrate it better with the W3C
+            tool suite.
           </p>
         </section>
         <section>
