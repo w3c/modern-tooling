@@ -128,6 +128,238 @@
         This section is a categorised but unprioritised list of tools and services that W3C should
         deploy, as well as ideas on how to manage integration with third-party systems.
       </p>
+
+      <section>
+        <h2>Specification Development</h2>
+        <p>
+          The heart of what we produce is specifications, as a manifestation of consensus. These
+          already have some tooling support but it can be both further and better integrated or
+          documented.
+        </p>
+        <section>
+          <h2>Automatic Publishing</h2>
+          <p>
+            Great progress has already been made thanks to the
+            <a href="https://github.com/w3c/echidna">Echidna</a> system that can publish Working
+            Drafts in an automated manner, as often as needed. This can effectively make TR
+            documents and Editor’s Drafts indistinguishable.
+          </p>
+          <p>
+            There are, however, still a number of exceptions to the documents that Echidna can
+            publish, and a number of rough edges to the system itself and its documentation. It
+            needs iterative improvements.
+          </p>
+          <p>
+            It will also need to expose a stream of notifications (as described further below) for
+            the documents it publishes.
+          </p>
+        </section>
+        <section>
+          <h2>De Facto GitHub</h2>
+          <p>
+            While the door needs to remain open for alternatives that our users may wish to avail
+            themselves of, the expected default location for specifications (and any other
+            W3C-related repository) should be GitHub, preferably under the
+            <a href="https://github.com/w3c/">w3c</a> organisation. This has several implications.
+          </p>
+          <p>
+            We need to <strong>document the proper usage of GitHub for such work</strong>. Some of
+            our users who are not from the Web development community can at times struggle with the
+            site or with common conventions. Team resources need to be dedicated to supporting 
+            users of GitHub. A specific collaboration with GitHub may be considered if needed.
+          </p>
+          <p>
+            Better even than documentation, which is often ignored, a <strong>tool that enables the
+            Team to set up new repositories correctly</strong>, within conventions, and given a few
+            specific options would be most useful.
+          </p>
+          <p>
+            Groups regularly need to add new contributors to their repositories (or, on occasion, to
+            remove them); which requires administrative powers. Sadly, the granularity of the ACL
+            system there does not allow us to grant that power to non-Team participants, which in
+            turn means that the Team needs to be called upon for everyday business. An interface to
+            <strong>grant our users the ability to maintain a repository’s collaborators</strong>
+            without involving the Team would be a time-saver.
+          </p>
+          <p>
+            Naturally, GitHub could disappear, go bankrupt, be overtaken by an evil gang of mole
+            rats, or simply fall behind. In such an event, we must have all the useful data at hand
+            and, if possible, be able to exploit it elsewhere. Git certainly makes it easy to keep
+            repository data — it only needs be cloned.
+          </p>
+          <p>
+            But GitHub also has a lot of useful information that isn't in git: issues, discussions,
+            etc. We also need to keep that around. For that, we need a <strong>GitHub backup
+            tool</strong>. This would use git’s naturally distributed nature in conjunction with the
+            ability to receive organisation-wide hooks (and use the API to grab everything) in order
+            to store all the useful information. Ideally all work would happen under the
+            <a href="https://github.com/w3c/">w3c</a> organisation but the tool ought to be flexible
+            enough to account for there being work elsewhere.
+          </p>
+          <p>
+            The hook system should also be used so as to produce a stream of notifications that can
+            later be integrated into the dashboard.
+          </p>
+          <p>
+            This also entail that both <code>dev.w3</code> and <code>dvcs.w3</code> should be phased
+            out. No new repository should be created there and no new user granted access. Projects
+            that are still active there should be moved (and redirected). Obviously the content
+            already published that no one is touching will likely need to stay there, but it should
+            essentially be a static, frozen archive of old work.
+          </p>
+        </section>
+        <section>
+          <h2>Specification Styles as a Community Project</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Beyond PubRules</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Specification Production Tools</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Cross-References Support</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>SpecRef</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Specification Quality Checker (CI)</h2>
+          <p>
+            
+          </p>
+          <!--
+            include Travis integration
+          -->
+        </section>
+        <section>
+          <h2>Link Checker</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>WebIDL Checker</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>WYSIWYG Specifications</h2>
+          <p>
+            
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h2>Dashboard</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        XXX
+        - notifications
+        - news
+        - urgent announcements
+        - AC rep user management
+        - WBS as API+UI
+        - the W3C Application (manage everything in there, using modules that talk to APIs)
+        - widgets in the dashboard (how to load, allow third parties)
+        - a service needs to provide unified feeds for everything so that they can be used by widgets
+          - commits
+          - issues
+          - communications
+        - widgets system in the dashboard (as separate software projects linked by npm)
+          - W3CMemes widget as one of the test ones
+          - list potential ones
+          - integrated view for a group based on unified eventing
+          - Netvibes like thing
+          - widgets can go full screen into "apps"
+          - preferences service
+          - http://masonry.desandro.com/options.html might be enough, otherwise http://packery.metafizzy.co/
+      -->
+      
+      <section>
+        <h2>Groups &amp; Community</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        XXX
+        - chat
+        - mailing list interface
+        - mailing list subscription management
+        - phone discussions (Twilio?)
+        - online/group discussions (Discourse)
+        - piratepad
+        - collaborative todo
+        - what to do with wikis? make sure there is a unified dashboard and notifications stream?
+        - issue tracking: all needs to produce unified feeds
+        - IRC logging
+      -->
+      
+      <section>
+        <h2>Core Site</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        XXX
+        - move away from CVS, partitioning
+        - Overview.html
+        - datedspace
+        - make it focus on public front end (plus legacy content), split all the rest out into 
+          manageable units
+      -->
+      
+      <section>
+        <h2>Testing</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        XXX
+        - testing tooling (WPT)
+        - coverage & links to specs
+        - Critic
+        - automatic runs against all browsers
+        - running against SauceLabs
+        - publishing results
+      -->
+       
+      <section>
+        <h2>Shipping</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        XXX
+        - need proper accessibility testing
+        - needs to work on mobile
+        - bots (and scribe.perl) need to work with this system
+      -->
+
       <section>
         <h2>Core Services</h2>
         <p>
@@ -148,6 +380,10 @@
             <a href="https://developer.github.com/v3/oauth/">OAuth implementation</a> may provide a
             good example.
           </p>
+          <p>
+            It should also be possible to retrieve useful information about a user, such as their
+            GitHub ID.
+          </p>
         </section>
         
         <section>
@@ -166,81 +402,6 @@
         </section>
       </section>
     </section>
-    
-    <!--
-      XXX
-      
-      DASHBOARD
-      - notifications
-      - news
-      - urgent announcements
-      - AC rep user management
-      - the W3C Application (manage everything in there, using modules that talk to APIs)
-      - widgets in the dashboard (how to load, allow third parties)
-      - a service needs to provide unified feeds for everything so that they can be used by widgets
-        - commits
-        - issues
-        - communications
-      - widgets system in the dashboard (as separate software projects linked by npm)
-        - W3CMemes widget as one of the test ones
-        - list potential ones
-        - integrated view for a group based on unified eventing
-        - Netvibes like thing
-        - widgets can go full screen into "apps"
-        - preferences service
-        - http://masonry.desandro.com/options.html might be enough, otherwise http://packery.metafizzy.co/
-
-      SPECS
-      - automatic publishing
-      - all GitHub stuff (backup)
-      - spec styles should evolve progressively, as a community project
-      - pubrules should be more than just validation, define a full language for specs
-      - spec producing tools
-      - WYSIWYG editor for specs
-      - cross-references
-      - specref
-      - tooling to test spec quality (including Travis integration)
-      - link-checker
-      
-      CORE SITE
-      - move away from CVS, partitioning
-      - Overview.html
-      - datedspace
-      - make it focus on public front end (plus legacy content), split all the rest out into 
-        manageable units
-      
-      GROUPS & COMMUNITY
-      - chat
-      - mailing list interface
-      - mailing list subscription management
-      - phone discussions (Twilio?)
-      - online/group discussions (Discourse)
-      - piratepad
-      - collaborative todo
-      - what to do with wikis? make sure there is a unified dashboard and notifications stream?
-      - WBS as API+UI
-      - issue tracking: all needs to produce unified feeds
-      - IRC logging
-      
-
-      TESTING
-      - testing tooling (WPT)
-      - coverage & links to specs
-      - Critic
-      - automatic runs against all browsers
-      - running against SauceLabs
-      - publishing results
-
-      SHIPPING
-      - need proper accessibility testing
-      - needs to work on mobile
-      - bots (and scribe.perl) need to work with this system
-      
-
-      TODO
-      - put together very basic notes
-      - disperse information more broadly
-    -->
     
     <section>
       <h2>Principles for Tool Integration</h2>
@@ -263,8 +424,13 @@
     <section>
       <h2>Acknowledgements</h2>
       <p>
-        XXX
+        The following people have provided useful input into this document.
       </p>
+      <ul>
+        <li>Dave Singer</li>
+        <li>Jeff Jaffe</li>
+        <li>Philippe Le Hégaret</li>
+      </ul>
     </section>
   </body>
 </html>
