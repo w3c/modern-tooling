@@ -6,12 +6,13 @@
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script>
     <script class='remove'>
       var respecConfig = {
-              specStatus:   "unofficial"
+              specStatus:   "webspec"
           ,   shortName:    "modern-tooling"
           ,   editors:      [{ name: "Robin Berjon", url: "http://berjon.com/",
                                company: "W3C", companyURL: "http://w3.org/" }]
           ,   edDraftURI:   "http://w3c.github.io/modern-tooling/"
           ,   license:      "w3c-software"
+          ,   repository:   "w3c/modern-tooling"
         };
     </script>
   </head>
@@ -32,49 +33,215 @@
         This is just informal work by an informal task force.
       </p>
     </section>
-    <!--
-      XXX
-      - automatic publishing
-      - all GitHub stuff
-      - chat
-      - notifications
-      - dashboards
-      - spec styles should evolve progressively, as a community project
-      - pubrules should be more than just validation, define a full language for specs
-      - spec producing tools
-      - move away from CVS, partitioning
-      - WYSIWYG editor for specs
-      - testing tooling (WPT)
-      - coverage
-      - tooling to test spec quality (including Travis integration)
-      - phone discussions (Twilio?)
-      - link-checker
-      - online/group discussions (Discourse)
-      - Overview.html
-      - datedspace
-      - piratepad
-      - collaborative todo
-      - what to do with wikis? make sure there is a unified dashboard and notifications stream?
-      - bots
-      - Galapagos syndrome
 
-      TODO
-      - put together very basic notes
-      - call for a bunch of people to join (Dave, Tobie, Dom, PLH, Mike)
-      - disperse information more broadly
-    -->
     <section>
       <h2>Problem Statement</h2>
       <p>
-        XXX
+        W3C is a heavily tooled organisation. We did Web tools long before they became ubiquitous
+        and our tooling has earned us two decades of praise — which is probably more than can be
+        said for any other part of the organisation.
       </p>
+      <p>
+        But the Web has changed quite a fair bit since then. Today, tools abound. The Web is an
+        application platform. Our users are happy using many third-party tools, and it is only
+        natural that they will compare what they can find elsewhere to our offering, sometimes
+        preferring other options.
+      </p>
+      <p>
+        This causes problems:
+      </p>
+      <ul>
+        <li>
+          Our users move their work to third-party tools, where the data they produce in developing
+          specifications may be lost or locked up. GitHub is a primary example here.
+        </li>
+        <li>
+          The work that groups carry out is becoming increasingly scattered across services, such
+          that it is hard to track and hard to join. Issue tracking for instance is all over the
+          place.
+        </li>
+        <li>
+          Our tools, even when they work well and remain the preferred option, are starting to look
+          old in both styling and interaction style. It is hard for our users to maintain the
+          impression that they are building the Web of tomorrow while using tools that are clearly
+          from the 90s. Some of our more recent users even find them hard to understand. A good
+          example is WBS or the mailing list archives.
+        </li>
+        <li>
+          Accumulation is hard to manage and makes content hard to find. The W3C Web site and the
+          majority of its services are exposed essentially as one single entity. After twenty years
+          of accretion, that makes it hard to evolve as was made obvious in the recent discussion
+          about upgrading it all to HTTPS. The heavily granular usage of ACLs makes it essentially
+          impossible to index. Finding things on the W3C Web site typically involves knowing someone
+          with the URL equivalent of an eidetic memory and asking them where to go. This issue is
+          further compounded by user-hostile URL policies (datedspace). A good example here would
+          be trying to find the next-generation pubrules service.
+        </li>
+      </ul>
+      <p>
+        We need an energetic rethink of the W3C’s tooling in order to stay relevant to our users.
+        That is what this document endeavours to provide.
+      </p>
+      <section>
+        <h2>The Plan</h2>
+        <p>
+          I expect to proceed as follows:
+        </p>
+        <ul>
+          <li>
+            Iterate over this document through
+            <a href="https://github.com/w3c/modern-tooling/issues">issues</a> and
+            <a href="https://github.com/w3c/modern-tooling/">pull requests</a>. All discussions are
+            intended to be public.
+          </li>
+          <li>
+            Go broad and assume it’s Christmas. I don't want to discourage input by having people
+            think about constraints. It’s of course very likely that at the end we can’t get
+            everything but that’s okay. We can easily prioritise later, but I don’t want to miss a
+            good idea.
+          </li>
+          <li>
+            Assume hackability. Even with the best and the pithiest involved in drafting this
+            document it is a given that not everything that may be useful to some part of our
+            community at some moment of the future will be thought of. We need to build to ensure
+            that our users can refine and extend our work.
+          </li>
+          <li>
+            Be particularly wary of the
+            <a href="http://en.wikipedia.org/wiki/Gal%C3%A1pagos_syndrome">Galápagos syndrome</a>.
+            There is every reason for W3C to have its specificities, even its quirks, but they need
+            to be usable and manageable.
+          </li>
+          <li>
+            Target mid-April for a first draft for internal W3C discussion; then present an overview
+            to the AC at its early May meeting.
+          </li>
+          <li>
+            Hopefully start implementing!
+          </li>
+        </ul>
+      </section>
     </section>
     <section>
-      <h2>Required Tools</h2>
+      <h2>Tools &amp; Supporting Setup</h2>
       <p>
-        XXX
+        This section is a categorised but unprioritised list of tools and services that W3C should
+        deploy, as well as ideas on how to manage integration with third-party systems.
       </p>
+      <section>
+        <h2>Core Services</h2>
+        <p>
+          These are services that can be reused by other parts of the ecosystem.
+        </p>
+        
+        <section>
+          <h2>Single Sign-On</h2>
+          <p>
+            Many tools and services will expose features that are user-dependent. It is not
+            appropriate for those to implement their own user database duplicating W3C’s. It would
+            also be a shame if they had to make use of third-party sign-on infrastructure (which
+            was the case with Discourse).
+          </p>
+          <p>
+            Which exact solution is selected here is of relatively little importance, but it does
+            need to support typical modern Web application authentication workflows. GitHub’s
+            <a href="https://developer.github.com/v3/oauth/">OAuth implementation</a> may provide a
+            good example.
+          </p>
+        </section>
+        
+        <section>
+          <h2>Search</h2>
+          <p>
+            The various tools to be developed may commonly require search functionality. Given the
+            spread of W3C’s content, this can quickly become required. For instance, an Etherpad
+            service might request indexing for its pads (using its own ACL knowledge), a chat
+            logging service might index the logs, etc.
+          </p>
+          <p>
+            One potential candidate, that can double as a JSON document store and therefore be
+            usable for application data storage, is <a href="http://www.elasticsearch.org/">Elastic
+            Search</a>.
+          </p>
+        </section>
+      </section>
     </section>
+    
+    <!--
+      XXX
+      
+      DASHBOARD
+      - notifications
+      - news
+      - urgent announcements
+      - AC rep user management
+      - the W3C Application (manage everything in there, using modules that talk to APIs)
+      - widgets in the dashboard (how to load, allow third parties)
+      - a service needs to provide unified feeds for everything so that they can be used by widgets
+        - commits
+        - issues
+        - communications
+      - widgets system in the dashboard (as separate software projects linked by npm)
+        - W3CMemes widget as one of the test ones
+        - list potential ones
+        - integrated view for a group based on unified eventing
+        - Netvibes like thing
+        - widgets can go full screen into "apps"
+        - preferences service
+        - http://masonry.desandro.com/options.html might be enough, otherwise http://packery.metafizzy.co/
+
+      SPECS
+      - automatic publishing
+      - all GitHub stuff (backup)
+      - spec styles should evolve progressively, as a community project
+      - pubrules should be more than just validation, define a full language for specs
+      - spec producing tools
+      - WYSIWYG editor for specs
+      - cross-references
+      - specref
+      - tooling to test spec quality (including Travis integration)
+      - link-checker
+      
+      CORE SITE
+      - move away from CVS, partitioning
+      - Overview.html
+      - datedspace
+      - make it focus on public front end (plus legacy content), split all the rest out into 
+        manageable units
+      
+      GROUPS & COMMUNITY
+      - chat
+      - mailing list interface
+      - mailing list subscription management
+      - phone discussions (Twilio?)
+      - online/group discussions (Discourse)
+      - piratepad
+      - collaborative todo
+      - what to do with wikis? make sure there is a unified dashboard and notifications stream?
+      - WBS as API+UI
+      - issue tracking: all needs to produce unified feeds
+      - IRC logging
+      
+
+      TESTING
+      - testing tooling (WPT)
+      - coverage & links to specs
+      - Critic
+      - automatic runs against all browsers
+      - running against SauceLabs
+      - publishing results
+
+      SHIPPING
+      - need proper accessibility testing
+      - needs to work on mobile
+      - bots (and scribe.perl) need to work with this system
+      
+
+      TODO
+      - put together very basic notes
+      - disperse information more broadly
+    -->
+    
     <section>
       <h2>Principles for Tool Integration</h2>
       <p>
