@@ -320,9 +320,24 @@
             Ideally, all definitions from all specifications should be globally available. This
             would make it possible to simply reference them in a specification tool source format
             and get the correct link and reference handled. It would enable the generation of
-            glossaries. We could expose a searchable interface that would make it possible for
+            glossaries (we urgently need to phase out <a href="http://www.w3.org/2003/glossary/">the
+            current one</a>). We could expose a searchable interface that would make it possible for
             people to find which specification defines what, and which make use of what concept or
             construct (something that would prove invaluable in coordination).
+          </p>
+        </section>
+        <section>
+          <h2>Live Examples</h2>
+          <p>
+            It is extremely common today to replace examples in documentation with live ones that
+            can be edited and rendered using one of the many services that provide such
+            functionality.
+          </p>
+          <p>
+            While it is probably not acceptable to inject code from a third-party service into our
+            specifications, there exist reusable components that would enable use to make the
+            examples in our specifications hackable. This would have tremendous value for developers
+            trying to learn and understand the technology.
           </p>
         </section>
         <section>
@@ -343,31 +358,100 @@
         <section>
           <h2>Specification Quality Checker (CI)</h2>
           <p>
-            
+            Some specification issues (that are not about the actual prose content) can sometimes
+            exist for embarrassingly long periods of time before anyone notices. Sometimes they are
+            noticed after a document is finalised. Or they are raised at the worst moment, all at
+            once when the editor is busy doing something else.
           </p>
-          <!--
-            include Travis integration
-          -->
-        </section>
-        <section>
-          <h2>Link Checker</h2>
           <p>
-            
+            Developers use continuous integration to make sure that there is a constant pressure
+            towards quality rather than a last-minute rush — so should editors. There have been
+            experiments around this (using Travis’ integration with GitHub), they should be
+            expanded and systematised.
+          </p>
+          <p>
+            Ideally, an editor should be able to, at the click of a button, have the proper Travis
+            integration (and dependencies) installed into the specification’s repository and
+            deployed for immediate usage. This could even be made the default at repository creation
+            if it is know that it will contain a specification.
+          </p>
+          <p>
+            Several different tools can be called up on for quality checking; since they can be used
+            on their own they are listed separately below and in the «Developer Tools» section.
           </p>
         </section>
         <section>
           <h2>WebIDL Checker</h2>
           <p>
-            
+            We have an existing WebIDL Checker. It needs to be integrated into the quality workflow
+            (arguably into Specberus as well as into the linting options of specification tools),
+            exist with guarantees of maintenance, documentation, and made easy to find.
+          </p>
+        </section>
+        <section>
+          <h2>References Checker</h2>
+          <p>
+            We have existing tools (that almost no one knows about) that can read a specification
+            and validate that its references (at least to W3C or IETF documents) are up to date with
+            the latest versions of those documents: the
+            <a href="http://www.w3.org/2004/07/references-checker-ui">references checker</a> and the
+            <a href="http://www.w3.org/2007/05/ietf-references-checker">IETF references checker</a>.
+          </p>
+          <p>
+            While specification production tools, by building atop SpecRef, have largely removed the
+            need for these, some specifications are produced by hand and some have local
+            bibliographies. They should be part of automated checking.
+          </p>
+        </section>
+        <section>
+          <h2>Spell Checker</h2>
+          <p>
+            W3C actually exposes a <a href="http://www.w3.org/2002/01/spellchecker">Spell checker</a>
+            tool (that can work with HTML). It is unclear that this could be integrated into
+            automated checking (given the number of justifiable exceptions) but it could perhaps be
+            made more prominent (or, if found not to be useful, retired).
+          </p>
+        </section>
+        <section>
+          <h2>Specification Diffs</h2>
+          <p>
+            W3C currently offers an <a href="http://www.w3.org/2007/10/htmldiff">HTML Diff</a>
+            service which is sometimes used to see changes to documents.
+          </p>
+          <p>
+            It is a common request to find out what has changed between two versions of a
+            specification, in fact producing a diff seems slated to be part of the new errata
+            management approach that the AB is investigating.
+          </p>
+          <p>
+            This should be made automatic, and possibly specialised. Right now the HTML diff tool
+            will produce as output a complete document, which can make the differences hard to find
+            (e.g. a paragraph change in the whole HTML specification). It can also include a lot of
+            spurious differences (for instance if a section was added at the beginning, all the
+            section numbers come out as changes).
+          </p>
+          <p>
+            This tool could be specialised for specifications in such a way that ignorable
+            differences would be ignored. Also, an affordance could be exposed in specifications
+            offering to see a diff between the version being looked at and any other version of this
+            document.
           </p>
         </section>
         <section>
           <h2>WYSIWYG Specifications</h2>
           <p>
-            
+            Supporting WYSIWYG editing for specifications could help improve collaboration and
+            contributions from people who might know HTML but are not necessarily versed in the
+            specific formalism of a given specification tool.
+          </p>
+          <p>
+            While such a tool would be interesting and valuable, it is a long and complex project
+            to put together, and likely not a priority.
           </p>
         </section>
       </section>
+
+
 
       <section>
         <h2>Dashboard</h2>
@@ -419,6 +503,20 @@
       -->
       
       <section>
+        <h2>Developer Services</h2>
+        <p>
+          
+        </p>
+      </section>
+      <!--
+        - link checker
+        - validator (CSS & HTML)
+        - I18N checker (http://validator.w3.org/i18n-checker/)
+        - A11Y checker
+        - http://validator.w3.org/mobile/
+      -->
+      
+      <section>
         <h2>Core Site</h2>
         <p>
           
@@ -460,6 +558,8 @@
         - need proper accessibility testing
         - needs to work on mobile
         - bots (and scribe.perl) need to work with this system
+          - integrate with all the above (with notifications!)
+          - can team people be recognised and given great privileges?
       -->
 
       <section>
