@@ -459,8 +459,91 @@
       <section>
         <h2>Dashboard</h2>
         <p>
-          
+          Perhaps the most common complaint about the W3C’s tooling setup, which is only made worse
+          by spreading work across a broad set of external services, is that there are too many
+          places at which to track things, often in very different ways.
         </p>
+        <p>
+          In addition to tracking information, taking action within the system also involves
+          remembering where different parts are. There are several pages listing services (e.g.
+          the Member page, the AC page, the Editors’ page) but they can prove overwhelming,
+          especially since they often have content that is out of date. They are also very generic:
+          most users don’t need to know everything that they contain.
+        </p>
+        <p>
+          This leads to three high-level requirements for a modern system, from its users’s point of
+          view:
+        </p>
+        <ul>
+          <li>
+            <strong>Unity</strong>: there needs to be a single URL at which to find
+            <em>everything</em>. This should include information about what is going on in parts of
+            the organisation that one is interested in, but also the ability to use the tools that
+            one needs to carry out one’s work within W3C.
+          </li>
+          <li>
+            <strong>Customisability</strong>: since no two participants have the same needs, they
+            need to be able to fully customise their interface.
+          </li>
+          <li>
+            <strong>Consistency</strong>: learning one tool is difficult, learning many all the more
+            so if they all look different. As far as possible we should endeavour to expose a
+            consistent user experience to our systems so as to reduce the learning curve for
+            newcomers.
+          </li>
+        </ul>
+        <p>
+          This translates to a specific design for the various moving parts of the system.
+        </p>
+        <section>
+          <h2>Unified Feeds</h2>
+          <p>
+            There are many sources of data that can become involved in the dashboard. In order to
+            keep them manageable, we need a specialised component that can provide a consistent
+            interface to them.
+          </p>
+          <p>
+            This service is a relatively simple shell around various data streams. It can be 
+            configured to poll a resource at regular intervals (e.g. retrieve and process an RSS
+            feed), or on the contrary to expose a hook for pushed information (e.g. we can set up
+            a GitHub hook calling it for all events in the <code>w3c</code> organisation there).
+          </p>
+          <p>
+            Each of its plugins knows how to obtain data and store it in a unified manner. They can
+            easily be configured (e.g. to add RSS feeds, to receive GitHub notifications from other
+            repositories).
+          </p>
+          <p>
+            This mass of data can then be returned to queries that essentially involve two filters:
+            which feeds the user is interested in, and a date-time cut-off so that one can ask only
+            for what has happened since one last visited.
+          </p>
+          <p>
+            Additionally, a WebSockets interface can be made available so that dashboard users can
+            get notifications in real time in the UI.
+          </p>
+        </section>
+        <section>
+          <h2>Dashboard</h2>
+          <p>
+            The dashboard itself is nothing but a container of smaller widgets which can be
+            configured, added, or removed by each user. In order to be fully generic, we need to
+            ensure that it remains extremely simple both in its own functionality and in the
+            interface it exposes to widgets.
+          </p>
+        </section>
+        <section>
+          <h2>Pluggable Widgets</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Notifier</h2>
+          <p>
+            
+          </p>
+        </section>
       </section>
       <!--
         XXX
@@ -629,6 +712,12 @@
         XXX
       </p>
     </section>
+    <!--
+      XXX
+      - continuous deployment for all the things
+    -->
+    
+    
     <section>
       <h2>Resource Requirements</h2>
       <p>
