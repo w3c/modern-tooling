@@ -531,42 +531,37 @@
             ensure that it remains extremely simple both in its own functionality and in the
             interface it exposes to widgets.
           </p>
-        </section>
-        <section>
-          <h2>Pluggable Widgets</h2>
           <p>
-            
+            Widgets can be used as part of an overview grid, or can take over the whole screen when
+            they need more real estate.
+          </p>
+          <p>
+            It is very important that it be possible for independent contributors to develop widgets
+            separately, that can then become available through the dashboard (after W3C approval, we
+            can’t automatically deploy third-part code). Widgets can expect to run in insulated
+            <code>iframe</code>s and to communicate with the dashboard to access whatever
+            information they need through messaging.
+          </p>
+          <p>
+            W3C’s own applications are expected to transition to being exposed as widgets. The
+            general principle at work is that services should be made available as APIs, and
+            exposed to users through widgets. With this in mind widgets can use a common stylesheet
+            and common scripting libraries to help support greater coherence and fluidity in
+            interaction.
           </p>
         </section>
         <section>
           <h2>Notifier</h2>
           <p>
-            
+            Another tool that can plug into the unified feed is a notifier. Users can opt into 
+            being notified of various events by email (though, you guessed it, a dashboard widget).
+          </p>
+          <p>
+            The notifier simply receives the unified data feed, and for each event finds if there
+            are people who want to be notified of it. If so, they get an email.
           </p>
         </section>
       </section>
-      <!--
-        XXX
-        - notifications
-        - news
-        - urgent announcements
-        - AC rep user management
-        - WBS as API+UI
-        - the W3C Application (manage everything in there, using modules that talk to APIs)
-        - widgets in the dashboard (how to load, allow third parties)
-        - a service needs to provide unified feeds for everything so that they can be used by widgets
-          - commits
-          - issues
-          - communications
-        - widgets system in the dashboard (as separate software projects linked by npm)
-          - W3CMemes widget as one of the test ones
-          - list potential ones
-          - integrated view for a group based on unified eventing
-          - Netvibes like thing
-          - widgets can go full screen into "apps"
-          - preferences service
-          - http://masonry.desandro.com/options.html might be enough, otherwise http://packery.metafizzy.co/
-      -->
       
       <section>
         <h2>Groups &amp; Community</h2>
