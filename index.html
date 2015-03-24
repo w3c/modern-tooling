@@ -568,17 +568,100 @@
       <section>
         <h2>Groups &amp; Community</h2>
         <p>
-          
+          This section covers tools that are in common use for coordination and communication inside
+          groups and the broader community.
         </p>
+        <section>
+          <h2>IRC &amp; Chatting</h2>
+          <p>
+            In general IRC is operational and does not require much in the way of changes. There may
+            be slightly improved interfaces for a Web bridge into IRC, but it is likely not a high
+            priority.
+          </p>
+          <p>
+            IRC logging could, however, be improved. <code>RRSAgent</code> has its value for the
+            specific case of capturing minutes in a manner that is easily reused by other tools, but
+            as a general-purpose logger we can do better. Too many channels are simply not logged at
+            all — even though much work takes places over IRC — and when they are <code>RRSAgent</code>
+            logs are then extremely hard to find, lost in dated-space never to be retrieved again.
+          </p>
+          <p>
+            A general-purpose channel logger bot need not be complicated. In my experience, people
+            are satisfied with <a href="http://krijnhoetmer.nl/irc-logs/">Krijn Hoetmer’s setup</a>.
+            Its limitations are largely that it requires getting agreement from Krijn in order to
+            get something logged, and it wouldn't scale to the many channels we would want to log.
+          </p>
+          <p>
+            A single service at which all chat logs can be located would therefore be needed. It
+            does not require bells and whistles, but it needs to support continuous logging, finding
+            channels, and search.
+          </p>
+        </section>
+        <section>
+          <h2>Mailing List Interfaces</h2>
+          <p>
+            While the mailing list service itself is largely beyond reproach, the interface to our
+            archives is now one of the more decried parts of our offering. While a number of the
+            complaints may be exaggerated, it is certainly true that it could do with improvements
+            in both style and usability.
+          </p>
+          <p>
+            A project that is commonly cited as a huge improvement over what existed previously is
+            <a href="https://esdiscuss.org/">https://esdiscuss.org/</a>. It is not perfect, and the
+            source can probably not be reused as is. Its fundamental architecture is sound however:
+            convert email to JSON and expose those for other services to build upon. Given the size
+            of the W3C archive and its daily volume, this would not be a minor undertaking — it is
+            likely better to test-drive the idea on a small set of lists.
+          </p>
+          <p>
+            People have also complained about the user experience of signing up to our lists. A
+            user interface allowing people who have an account (either with us, or with a 
+            third-party service that we can authenticate against) to use that to subscribe directly
+            (without the email ping-pong) and to immediately accept archival would help our
+            community as well.
+          </p>
+        </section>
+        <section>
+          <h2>Forum</h2>
+          <p>
+            Forums have overtaken mailing lists in terms of popularity for online discussion. Groups
+            would certainly benefit from being able to rely on those for at least some of their
+            work.
+          </p>
+          <p>
+            This aspect is already covered by our 
+            <a href="http://discourse.specifiction.org/">Discourse</a> installation, which is being
+            moved to WebPlatform.
+          </p>
+        </section>
+        <section>
+          <h2>EtherPads</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Collaborative Todos</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>Issue Trackers</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>The Fate of Wikis</h2>
+          <p>
+            
+          </p>
+        </section>
       </section>
       <!--
         XXX
-        - chat
-        - IRC logging
-        - mailing list interface
-        - mailing list subscription management
         - phone discussions (Twilio?)
-        - online/group discussions (Discourse)
         - piratepad
         - collaborative todo
         - what to do with wikis? make sure there is a unified dashboard and notifications stream?
@@ -590,14 +673,43 @@
         <p>
           
         </p>
+        <section>
+          <h2>Link Checker</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>CSS &amp; HTML Validators</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>I18N Checker</h2>
+          <p>
+            http://validator.w3.org/i18n-checker/
+          </p>
+        </section>
+        <section>
+          <h2>Accessibility Checker</h2>
+          <p>
+            
+          </p>
+        </section>
+        <section>
+          <h2>MobileOK</h2>
+          <p>
+            http://validator.w3.org/mobile/
+          </p>
+        </section>
+        <section>
+          <h2>Developer Landing Page</h2>
+          <p>
+            existing content and new stuff
+          </p>
+        </section>
       </section>
-      <!--
-        - link checker
-        - validator (CSS & HTML)
-        - I18N checker (http://validator.w3.org/i18n-checker/)
-        - A11Y checker
-        - http://validator.w3.org/mobile/
-      -->
       
       <section>
         <h2>Core Site</h2>
