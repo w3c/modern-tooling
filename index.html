@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <title>Modern Tooling</title>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script>
-    <script class='remove'>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async class="remove"></script>
+    <script class="remove">
       var respecConfig = {
               specStatus:   "webspec"
           ,   shortName:    "modern-tooling"
@@ -17,7 +17,7 @@
     </script>
   </head>
   <body>
-    <section id='abstract'>
+    <section id="abstract">
       <p>
         This document is meant to capture the state of the discussion about modernising the tooling
         that supports the making of W3C standards.
@@ -28,7 +28,7 @@
         <a href="https://github.com/w3c/modern-tooling/issues">the issues</a>.
       </p>
     </section>
-    <section id='sotd'>
+    <section id="sotd">
       <p>
         This is just informal work by an informal task force.
       </p>
@@ -95,7 +95,7 @@
             intended to be public.
           </li>
           <li>
-            Go broad and assume it’s Christmas. I don't want to discourage input by having people
+            Go broad and assume it’s Christmas. I don’t want to discourage input by having people
             think about constraints. It’s of course very likely that at the end we can’t get
             everything but that’s okay. We can easily prioritise later, but I don’t want to miss a
             good idea.
@@ -191,7 +191,7 @@
             repository data — it only needs be cloned.
           </p>
           <p>
-            But GitHub also has a lot of useful information that isn't in git: issues, discussions,
+            But GitHub also has a lot of useful information that isn’t in git: issues, discussions,
             etc. We also need to keep that around. For that, we need a <strong>GitHub backup
             tool</strong>. This would use git’s naturally distributed nature in conjunction with the
             ability to receive organisation-wide hooks (and use the API to grab everything) in order
@@ -287,7 +287,7 @@
           </p>
           <p>
             One aspect in which they can be improved is to bring their source formats in line
-            wherever it makes sense (and isn't disruptive). The end goal here is that contributors
+            wherever it makes sense (and isn’t disruptive). The end goal here is that contributors
             to specifications who move between groups should as much as possible find themselves
             able to switch between tools as easily as possible.
           </p>
@@ -589,7 +589,7 @@
             A general-purpose channel logger bot need not be complicated. In my experience, people
             are satisfied with <a href="http://krijnhoetmer.nl/irc-logs/">Krijn Hoetmer’s setup</a>.
             Its limitations are largely that it requires getting agreement from Krijn in order to
-            get something logged, and it wouldn't scale to the many channels we would want to log.
+            get something logged, and it wouldn’t scale to the many channels we would want to log.
           </p>
           <p>
             A single service at which all chat logs can be located would therefore be needed. It
@@ -637,36 +637,126 @@
         <section>
           <h2>EtherPads</h2>
           <p>
-            
+            Etherpads are commonly used to take shared notes, which <em>could</em> be useful for
+            minutes in some groups, but is also particularly useful during brainstorming sessions
+            when a group of people wishes to collectively.
+          </p>
+          <p>
+            Because W3C does not provide its own pads, people routinely use those available from
+            <a href="https://etherpad.mozilla.org/">Mozilla</a> or the
+            <a href="http://etherpad.mit.edu/">MIT</a>. This results in information being scattered
+            far and wide.
+          </p>
+          <p>
+            There are numerous pad implementations, deploying this is largely a case of picking one
+            that we like. A good pad should support:
+          </p>
+          <ul>
+            <li>History: you can replay the edits;</li>
+            <li>Archivability: you can mark a pad as «done» to freeze it.</li>
+            <li>
+              Search: the pads should be indexed so that one can find content. This could be
+              supported externally, but does require the pad system to offer the means of listing
+              all the existing pads.
+            </li>
+          </ul>
+          <p>
+            Bonus points if there is a way for the pad to tie into our user system such that people
+            who join a pad to edit automatically have their names set up.
           </p>
         </section>
         <section>
           <h2>Collaborative Todos</h2>
           <p>
-            
+            This section is more of an open question than anything else. Some teams use systems like
+            <a href="https://trello.com/">Trello</a> to organise their work, basically through
+            collaborative todo lists. I am not aware of groups doing the same, but I would be
+            interested in hearing about usage or interest.
           </p>
         </section>
         <section>
           <h2>Issue Trackers</h2>
           <p>
-            
+            Three major bug trackers are in use in W3C groups:
+            <a href="https://www.w3.org/Bugs/Public/">Bugzilla</a>,
+            <a href="http://www.w3.org/2005/06/tracker/">Tracker</a>, and GitHub Issues.
+          </p>
+          <p>
+            Bugzilla is the most powerful and flexible of the three, but it is extremely slow, its
+            interface is clunky, and automating it through external tools generally requires
+            scraping its HTML output. (There does exist a way of enable XML-RPC into it, but, well,
+            it’s XML-RPC.) It also likes to send email; a lot.
+          </p>
+          <p>
+            Tracker is the only option with IRC integration (through <code>trackbot</code>) and it
+            also supports action items in addition to issues. It knows about our users, IRC nicks,
+            and working groups, which can prove useful. However its interface is also clunky and
+            setting up a new instance for a given project requires intervention.
+          </p>
+          <p>
+            GitHub issues are by far the easiest to use. They have nice conversational capabilities.
+            However they’re external to W3C and they don’t know about groups and the such.
+          </p>
+          <p>
+            I am making the following perhaps radical recommendations:
+          </p>
+          <ul>
+            <li>
+              Phase out Bugzilla. It is horribly slow and painful to use. Its code base is hopeless.
+              I know of no group that uses its more advanced features; and groups that use some of
+              them tend to use them wrong.
+            </li>
+            <li>
+              Phase out Tracker. Issues should be linked to a project more than to a group. Action
+              items can be issues assigned to someone, and eventually tied to a milestone (the dates
+              on AIs are almost never heeded anyway).
+            </li>
+            <li>
+              Move all issue tracking to GitHub. Having issues tied to projects makes up for tying
+              them to a group. There is no requirement for administrative intervention. The hardest
+              point is IRC integration. An IRC bot will need to be developed that can integrate
+              with GitHub issues, can be configured directly in a channel, and can proxy action on
+              behalf of people on the channel. This is not a minor project, but the upside is that
+              if done well it would be of interest to a community beyond W3C and would therefore
+              likely receive contributions.
+            </li>
+          </ul>
+          <p>
+            If we cannot unify our issues handling, then at the very least the various services will
+            need to be plugged into the <a href="#unified-feeds">Unified Feeds</a> system so as to
+            be visible in the dashboard.
           </p>
         </section>
         <section>
           <h2>The Fate of Wikis</h2>
           <p>
-            
+            Wikis are annoying. Idiosyncratic syntax, little to no notification, practically nothing
+            in the way of actual collaboration (people might work on the same document but don’t
+            really talk, certainly not in practice). W3C makes the problem worse by having
+            uncountable different wikis spread out all over the place. It is already hard to find
+            information in one wiki; when one has to remember which wiki it was in things go awry.
           </p>
+          <p>
+            That said, wikis do have their die-hard lovers and they will likely remain in use. I
+            recommend:
+          </p>
+          <ul>
+            <li>Avoiding the creation of new wikis as much as possible.</li>
+            <li>Making the existing ones read-only as often as possible.</li>
+            <li>
+              If people need to produce joint notes, they can use a pad. If they need to produce
+              joint documents they can use HTML in a repository, with all the usual collaboration
+              this enables (issues, pull requests, etc.).
+            </li>
+            <li>
+              For wikis that remain in use, they should be integrated into the 
+              <a href="#unified-feeds">Unified Feeds</a> system so that at least changes made there
+              can show up in the dashboard. A single entry point to search across all the (public
+              and active) wikis would be a big plus.
+            </li>
+          </ul>
         </section>
       </section>
-      <!--
-        XXX
-        - phone discussions (Twilio?)
-        - piratepad
-        - collaborative todo
-        - what to do with wikis? make sure there is a unified dashboard and notifications stream?
-        - issue tracking: all needs to produce unified feeds
-      -->
       
       <section>
         <h2>Developer Services</h2>
@@ -829,6 +919,9 @@
     <!--
       XXX
       - continuous deployment for all the things
+      - split the plan up by larger projects and try to estimate costs for a first wave
+      - the first wave should including assessing some of the future parts further
+      - make a priority hit-list for things that are most important to do this year
     -->
     
     
