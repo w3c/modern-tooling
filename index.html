@@ -832,17 +832,77 @@
       <section>
         <h2>Core Site</h2>
         <p>
-          
+          While not strictly a tool in itself, the core <code>w3c.org</code> site is a big part of
+          what our users interact with, and improving it would help with many aspects of their work,
+          notably not driving them to third parties when there is no need to.
         </p>
+        <section>
+          <h2>Moving away from CVS</h2>
+          <p>
+            CVS makes using the core site inordinately painful. I for one avoid publishing anything
+            there unless I really have to; in several cases I have set up an <code>.htaccess</code>
+            proxy from a subdirectory just so I would never need to touch it again. I know others
+            have similar experiences.
+          </p>
+          <p>
+            The massive size of the site also causes issues of its own. For instance, the recent
+            discussion on upgrading to HTTPS across the board revealed just how hard it is to
+            evolve it.
+          </p>
+          <p>
+            The site cannot be moved to a more modern system wholesale, but likely it does not need
+            to.
+          </p>
+          <ul>
+            <li>Old content that is no longer touched can be left dormant where it is.</li>
+            <li>
+              The focus of the core site should be as much as possible restricted to its
+              public-facing components; basically explaining what W3C is, providing some news, etc.
+            </li>
+            <li>
+              Active content (group pages, services, etc.) should all be moved to their own
+              sub-sites (e.g. using subdomains) that have their own Web space and can clearly be
+              identified as their own thing. Not only does this make them easier to find, it also
+              makes them manageable as smaller, modular units. These could all get their own
+              individual repositories for instance.
+            </li>
+            <li>
+              Things that have historically been maintained somewhere in the bowels of this vast
+              beast should be moved one by one to another location of their own.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Idiosyncrasies</h2>
+          <p>
+            W3C invented conventions before conventions existed. In some cases, those became
+            conventions only within W3C.
+          </p>
+          <p>
+            <code>Overview.html</code> is one of those. The norm is <code>index.html</code>. It
+            should become the norm on all new Web setups at W3C, and where possible
+            <code>Overview.html</code> ought to be retired. It may seem like a small thing but it is
+            a regular annoyance.
+          </p>
+          <p>
+            Dated space, of course, needs to die. There are exact seven people in the world who find
+            it usable, six of which are on the Team (the other one being DanC). It is maddening,
+            distracting, confusing, and in violation of every single URL design best practice in
+            use anywhere outside the Consortium’s walls.
+          </p>
+          <p>
+            Again, dormant content in dated space can stay there. But content that is in any way,
+            manner, or form still in active use should never be in dated space. A non-exhaustive
+            list of content that should never be allowed to reside in dated space includes:
+          </p>
+          <ul>
+            <li>Public-facing content;</li>
+            <li>Groups;</li>
+            <li>Charters;</li>
+            <li>Tools</li>
+          </ul>
+        </section>
       </section>
-      <!--
-        XXX
-        - move away from CVS, partitioning
-        - Overview.html
-        - datedspace
-        - make it focus on public front end (plus legacy content), split all the rest out into 
-          manageable units
-      -->
       
       <section>
         <h2>Testing</h2>
