@@ -907,23 +907,81 @@
       <section>
         <h2>Testing</h2>
         <p>
-          
+          Our testing infrastructure has become increasingly important. In general it is much more
+          recent that the rest of our tools and so less in need of modernising. But the setup can
+          nevertheless be improved.
         </p>
+        <section>
+          <h2>Critic</h2>
+          <p>
+            The Web Platform Tests (WPT) system relies on a code-review engine known as Critic. It
+            ties into GitHub pull requests and is much more powerful than GitHub’s built-in code
+            review.
+          </p>
+          <p>
+            Most groups likely do not need Critic, but for more complex code such as that which is
+            found in tests it is a very welcome improvement.
+          </p>
+          <p>
+            The <a href="http://critic.hoppipolla.co.uk/">current Critic instance</a> is run by
+            James Graham on his personal server, and without HTTPS. While that is not the end of the
+            world, given how central Critic is to the testing work it would be much better to host
+            it on W3C.
+          </p>
+        </section>
+        <section>
+          <h2>Automatic Browser Testing</h2>
+          <p>
+            We have an existing system that allows people to run the (automated parts of the) test
+            suite continuously, without human intervention. Right now it has only been adopted by
+            a couple of browser vendors.
+          </p>
+          <p>
+            We should take this to the next level. We can integrate with 
+            <a href="https://saucelabs.com/">SauceLabs</a> (with whom we have a free account) and
+            systematically run the entire test suite against the full set of browsers that they
+            expose. This should allow us to gather very detailed statistics about which parts of the
+            platform work where. It has the added advantage that it can help detect some broken
+            tests.
+          </p>
+        </section>
+        <section>
+          <h2>Coverage &amp; Test/Spec Linking</h2>
+          <p>
+            Finding out how much of a given specification is covered by the test suite is a hard,
+            manual, and error-prone process. It cannot be perfectly automated, but it can be
+            improved.
+          </p>
+          <p>
+            This also involves figuring out how to identify that a given test is related to part of
+            a specification.
+          </p>
+          <p>
+            These tasks are not trivial and highly heuristic, but there has been previous work. It
+            needs to be assessed and integrated.
+          </p>
+        </section>
+        <section>
+          <h2>Publishing Results</h2>
+          <p>
+            Once we have testing results for many implementations, we should publish them in a
+            manner that is useful to developers. Such information is invaluable. The interface does
+            not require much in terms of complexity.
+          </p>
+        </section>
+        <section>
+          <h2>Collaborators Access</h2>
+          <p>
+            The testing project involves close collaborations between parties that are not all on
+            the Team, yet develop the major parts of the system. While the service should be run on
+            W3C resources, it would not be efficient to gate deployment to Team members only.
+          </p>
+          <p>
+            It would therefore be very valuable to enable SSH access to a select group of
+            contributors so that they could help curate the testing services.
+          </p>
+        </section>
       </section>
-      <!--
-        XXX
-        - testing tooling (WPT)
-        - coverage & links to specs
-        - Critic
-        - automatic runs against all browsers
-        - running against SauceLabs
-        - publishing results
-        
-        - using the CommonCrawl to index a large body of content properly
-          - this is a major endeavour
-        - we might need SSH access for collaborators so that third-parties can build services we
-          expose
-      -->
        
       <section>
         <h2>Shipping</h2>
