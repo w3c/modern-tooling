@@ -574,16 +574,26 @@
         <section>
           <h2>IRC &amp; Chatting</h2>
           <p>
-            In general IRC is operational and does not require much in the way of changes. There may
-            be slightly improved interfaces for a Web bridge into IRC, but it is likely not a high
-            priority.
+            IRC is relatively operational and it is highly programmable. Because of this, it would
+            be hard to replace with other more modern solutions such as 
+            <a href="https://slack.com/">Slack</a> or <a href="https://gitter.im/">gitter</a>. It
+            is, however, often unknown to the younger generation or in fact more generally to people
+            not strongly steeped in the open source culture of the past twenty years. As such, an
+            improved Web interface would be desirable (the current one is serviceable, but could do
+            with some freshening). One potential option here would be
+            <a href="https://github.com/erming/shout">Shout</a>. It is a client-server combo with a
+            rich interface, and is entirely implemented in JS. Amongst its advantages are that it
+            can remain connected to IRC even when you close your browser, it supports connecting as
+            the same user through multiple channels at once, and has a responsive layout that is
+            well-suited to usage on a smartphone.
           </p>
           <p>
             IRC logging could, however, be improved. <code>RRSAgent</code> has its value for the
             specific case of capturing minutes in a manner that is easily reused by other tools, but
             as a general-purpose logger we can do better. Too many channels are simply not logged at
-            all — even though much work takes places over IRC — and when they are <code>RRSAgent</code>
-            logs are then extremely hard to find, lost in dated-space never to be retrieved again.
+            all — even though much work takes places over IRC — and when they are
+            <code>RRSAgent</code> logs are then extremely hard to find, lost in dated-space never to
+            be retrieved again.
           </p>
           <p>
             A general-purpose channel logger bot need not be complicated. In my experience, people
@@ -1097,6 +1107,8 @@
       </p>
       <ul>
         <li>Dave Singer</li>
+        <li>Ivan Herman</li>
+        <li>James Fuller</li>
         <li>Jeff Jaffe</li>
         <li>Philippe Le Hégaret</li>
         <li>Ralph Swick</li>
