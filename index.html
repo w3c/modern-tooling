@@ -125,6 +125,33 @@
         </ul>
       </section>
     </section>
+    
+    <section>
+      <h2>Executive Summary &amp; Plan</h2>
+      <p>
+        
+      </p>
+      <section>
+        <h2>Implementation Plan</h2>
+        <p>
+          XXX
+        </p>
+      </section>
+      <!--
+        XXX
+        - continuous deployment for all the things
+        - split the plan up by larger projects and try to estimate costs for a first wave
+        - the first wave should including assessing some of the future parts further
+        - make a priority hit-list for things that are most important to do this year
+      -->
+      <section>
+        <h2>Resource Requirements</h2>
+        <p>
+          XXX
+        </p>
+      </section>
+    </section>
+    
     <section>
       <h2>Tools &amp; Supporting Setup</h2>
       <p>
@@ -563,6 +590,17 @@
           <p>
             The notifier simply receives the unified data feed, and for each event finds if there
             are people who want to be notified of it. If so, they get an email.
+          </p>
+          <p>
+            The notifier needs to be able to filter events based on labels. For instance, the I18N
+            WG uses «I18N» labels on bugs on other groups’ bugs trackers in order to track 
+            horizontal reviews. Similar conventions could be supported by other groups.
+          </p>
+          <p>
+            Dom has built a tool
+            (<a href="https://github.com/dontcallmedom/github-notify-ml">github-notify-ml</a>) that
+            can notify mailing lists when certain events happen on GitHub. It could be enhanced to
+            make use of this system.
           </p>
         </section>
       </section>
@@ -1024,15 +1062,6 @@
       </section>
 
       <section>
-        <h2>Deployment</h2>
-        <p>
-          All new tools must be developed in such a manner that they are automatically deployed
-          to production whenever a change is merged to master. It is the only sane way to maintain
-          a product.
-        </p>
-      </section>
-
-      <section>
         <h2>Core Services</h2>
         <p>
           These are services that can be reused by other parts of the ecosystem.
@@ -1080,40 +1109,43 @@
     </section>
 
     <section>
+      <h2>Deployment</h2>
+      <p>
+        All new tools must be developed in a such a manner that they are automatically deployed
+        to production whenever a change is merged to master. It is the only sane way to maintain
+        a product.
+      </p>
+      <p>
+        There is little point in producing new tools if they are hard to use and people do not 
+        understand them. It is an absolute requirement for tools being deployed to be accompanied by
+        genuine, non-cursory documentation intended at all their possible users.
+      </p>
+    </section>
+
+    <section>
       <h2>Principles for External Tool Integration</h2>
       <p>
-        XXX
+        It is this plans’s considered opinion that users should be encouraged to experiment with
+        external tools if and when they find shortcomings in ours. Having said that, for an external
+        tool to be considered acceptable it needs to fulfil the following basic needs:
       </p>
-    </section>
-    <!--
-      XXX
-      - persistence for external tools
-      - a11y
-      - i18n
-      - available in all countries
-    -->
-
-    <section>
-      <h2>Implementation Plan</h2>
+      <ul>
+        <li>Accessibility;</li>
+        <li>
+          Internationalisation (not necessarily localised to all languages, but at least usable with 
+          content from those languages which Unicode supports);
+          </li>
+        <li>Availability in all countries;</li>
+        <li>Reasonable expectations of privacy and security.</li>
+      </ul>
       <p>
-        XXX
+        Additionally, the W3C has requirements in terms of persistence. We cannot require of an
+        external service that it make a promise of persistence it may be unable to keep, but we need
+        to have the means to obtain our data easily so as to persist it easily ourselves. This has
+        the nice side property that it requires full data export and ownership.
       </p>
     </section>
-    <!--
-      XXX
-      - continuous deployment for all the things
-      - split the plan up by larger projects and try to estimate costs for a first wave
-      - the first wave should including assessing some of the future parts further
-      - make a priority hit-list for things that are most important to do this year
-    -->
-
-
-    <section>
-      <h2>Resource Requirements</h2>
-      <p>
-        XXX
-      </p>
-    </section>
+    
     <section>
       <h2>Acknowledgements</h2>
       <p>
