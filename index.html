@@ -795,6 +795,43 @@
           </p>
         </section>
         <section>
+          <h2>Group Pages</h2>
+          <p>
+            W3C Working Groups should maintain a page about what they do, what their documents are
+            with what status, what their upcoming events of note are, how they can be interacted
+            with, etc.
+          </p>
+          <p>
+            Currently that is usually done by the team contact and/or chair hand-editing a bunch of
+            HTML documents in CVS. The information provided is completely different from group to
+            group, and the layouts are all over the place. If you know how to find information with
+            one group, you will be lost with another. What’s more, the editing process is painful
+            enough that it is rarely done, and can rarely be automated. Stale information abounds
+            (it is very common to find completely outdated charters for instance, or list of minutes
+            that stop two years ago even though the group is active). Some groups have moved a fair
+            part of their information elsewhere, sometimes their own site, sometimes a wiki. This
+            is further compounded by the fact that most — but not all! — group pages are in dated
+            space somewhere. There is simply no easy way to find them; at times even search engines
+            get confused.
+          </p>
+          <p>
+            Group content should be entirely moved to a single, easily found location. For instance,
+            <code>https://groups.w3.org/$GROUP_NAME</code>.
+          </p>
+          <p>
+            Group pages should be managed using simple but effective tools. CMSs are unlikely to
+            provide a good match in terms of flexibility and automation. A static generator system
+            such as <a href="http://jekyllrb.com/">Jekyll</a> ought to be used. A common layout
+            should be deployed across the board. Similar information should be presented in a
+            similar fashion and at similar locations (both on screen and in URL space).
+          </p>
+          <p>
+            In addition to the functionality already provided by such tools (pages and blogs for 
+            news being typical), it ought to be relatively easy to write plugins to publish 
+            calendaring information as well.
+          </p>
+        </section>
+        <section>
           <h2>The Fate of Wikis</h2>
           <p>
             Wikis are annoying. Idiosyncratic syntax, little to no notification, practically nothing
