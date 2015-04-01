@@ -477,6 +477,23 @@
           </p>
         </section>
         <section>
+          <h2>Dependency Tracker</h2>
+          <p>
+            Specs depends on one another, but there is very little made to ensure these dependencies
+            are kept in sync; they are expected to be reviewed at transitions, and sometimes the
+            link checker will spot a dependency gone wrong, but a more systematic approach would
+            allow for better coordination across groups and reduce the risks for «monkey patching».
+          </p>
+          <p>
+            A dependency tracker that would allow to visualise and report the dependencies between
+            spec, e.g. in terms of WebIDL interfaces, but also in terms of algorithms would be
+            terrific. Ideally, they would lead to much more granular dependencies — a spec usually
+            depends on a few items of a given spec, not the whole thing; assessing dependencies at
+            the right granularity would be helpful for streamlining transitions on the 
+            Recommendation track.
+          </p>
+        </section>
+        <section>
           <h2>WYSIWYG Specifications</h2>
           <p>
             Supporting WYSIWYG editing for specifications could help improve collaboration and
