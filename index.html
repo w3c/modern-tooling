@@ -145,7 +145,9 @@
         execution of this plan.
       </p>
       <p>
-        Everything includes documentation and testing.
+        Everything includes documentation and testing. All projects are expected to use continuous
+        development, which is to say that whenever something hits the <code>master</code> branch it
+        is deployed into production.
       </p>
       <section>
         <h2>First Priority</h2>
@@ -287,31 +289,94 @@
       <section>
         <h2>Second Priority</h2>
         <p>
-          XXX
+          The projects in this category include:
         </p>
-        <!--
-          - mailing list UI
-          - interactive specs
-          - live examples
-          - WebIDL checker integration
-          - tool to set up GitHub correctly/easily
-          - spec styles (bump?)
-          - Etherpad
-          - Collaborators access
-        -->
-      </section>
-      <!--
-        XXX
-        - continuous deployment for all the things
-        - split the plan up by larger projects and try to estimate costs for a first wave
-        - the first wave should including assessing some of the future parts further
-        - make a priority hit-list for things that are most important to do this year
-      -->
-      <section>
-        <h2>Resource Requirements</h2>
-        <p>
-          XXX
-        </p>
+        <dl>
+          <dt>Mailing List UI</dt>
+          <dd>
+            <p>
+              The goal of this project is to make the user interface for mailing lists more usable.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 2-3 months FTE.
+            </p>
+          </dd>
+          <dt>Interactivity in Specifications</dt>
+          <dd>
+            <p>
+              Our specification could suffer to make use of modern capabilities standardised across
+              the board (rather than added in an ad hoc fashion here and there).
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 3 weeks FTE.
+            </p>
+          </dd>
+          <dt>Live Examples in Specifications</dt>
+          <dd>
+            <p>
+              The ability to have live examples that can be experimented with directly in the 
+              specification would help make things much easier to understand for readers.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 2 weeks FTE.
+            </p>
+          </dd>
+          <dt>WebIDL Checker Integration</dt>
+          <dd>
+            <p>
+              The current WebIDL checker works, but it should be integrated into Specberus.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 1 week FTE (@@dom).
+            </p>
+          </dd>
+          <dt>Easier GitHub Management</dt>
+          <dd>
+            <p>
+              A number of GitHub maintenance tasks are pretty repetitive and could be partially
+              automated. Also, templates to set up repositories would help people get it right and
+              not have to learn tricks from the lore.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 3 weeks FTE.
+            </p>
+          </dd>
+          <dt>Open Source Specification Styles</dt>
+          <dd>
+            <p>
+              Many people want to improve our specification styles, but «Big Bang» attempts to
+              change them entirely have so far failed. The goal of this project is to make the 
+              styles open source in order to make it possible for people to contribute to gradual
+              improvements.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 2 weeks FTE.
+            </p>
+          </dd>
+          <dt>Etherpad</dt>
+          <dd>
+            <p>
+              Etherpads are very useful for collaboration, yet W3C does not offer one. As a result,
+              people use pads all over the place. This project simply installs an instance of our
+              own. The first step is to figure out which one is the best option.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@systeam.
+            </p>
+          </dd>
+          <dt>Collaborators Access</dt>
+          <dd>
+            <p>
+              We regularly need to provide some degree of access to some trusted collaborators. The
+              primary use case is the Web Platform Tests system where we have external developers.
+              This could simply be no more than putting <code>grumple</code> outside the firewall
+              and granting access to two or three people. This also needs a clear policy.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@ted.
+            </p>
+          </dd>
+        </dl>
       </section>
     </section>
     
