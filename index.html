@@ -129,13 +129,176 @@
     <section>
       <h2>Executive Summary &amp; Plan</h2>
       <p>
-        
+        While precise details about the manner in which our various tools could be improved were
+        deliberately kept out of this document, there are nevertheless <em>many</em> things that
+        people would like to see changed, improved, or added. As a result, the full list in the
+        following sections is long, and it is easy to get one’s eyes off the ball.
+      </p>
+      <p>
+        This section provides information on the projects that have been deemed high priority. These
+        are described at a high level, and resource estimates are provided for them. «First 
+        priority» projects are intended for immediate development, «Second priority» projects are
+        expected to come in a second wave. Everything in this document not listed as part of those
+        two categories is considered to be kept for later. Note that «later» is not a fancy word for
+        «never», and people interested in jump-starting those should of course jump right to it. It
+        simply means that they are not immediately planned for with the resources available for the
+        execution of this plan.
+      </p>
+      <p>
+        Everything includes documentation and testing.
       </p>
       <section>
-        <h2>Implementation Plan</h2>
+        <h2>First Priority</h2>
+        <p>
+          The projects in this category include:
+        </p>
+        <dl>
+          <dt>Provisioning a <code>labs.w3</code> machine</dt>
+          <dd>
+            <p>
+              This is required for development and beta-testing purposes.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@ted
+            </p>
+          </dd>
+          <dt>Unified Feed</dt>
+          <dd>
+            <p>
+              The goal of this project is to develop a service that can integrate all of the
+              information being produced as we work (as it happens) and expose it for querying. It 
+              is the foundational brick for the dashboard, the notifiers, and possibly other 
+              services.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 1 month FTE.
+            </p>
+          </dd>
+          <dt>Dashboard</dt>
+          <dd>
+            <p>
+              A configurable dashboard exposing the information that a given user wants to have.
+              This is necessary in order for people not to be lost anymore. This is intended to
+              evolve towards a full-fledged control panel for our users, but in the first pass the
+              primary goal is to make it work as a configurable information-access system.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 1 month FTE.
+            </p>
+          </dd>
+          <dt>Email Notifier</dt>
+          <dd>
+            <p>
+              This system plugs into the unified feed and send emails to specific targets for a 
+              filtered subset of events.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@dom
+            </p>
+          </dd>
+          <dt>IRC Notifier</dt>
+          <dd>
+            <p>
+              Same as the email notifier, but for IRC channels. Note that this could be demoted to
+              lower priority.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 2 weeks FTE
+            </p>
+          </dd>
+          <dt>GitHub Backup</dt>
+          <dd>
+            <p>
+              As more of our work transitions to GitHub, we need to maintain a backup of the 
+              information we have there. The unified feed already effectively backs up information
+              from issues and the such, but the actual git content needs to be backed up as it
+              changes.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 1 week
+            </p>
+          </dd>
+          <dt>Echidna Notifications</dt>
+          <dd>
+            <p>
+              Echidna needs to send the information that it processes to the unified feed.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@denis/tripu/jeremie (probably only a couple days)
+            </p>
+          </dd>
+          <dt>W3C Data API</dt>
+          <dd>
+            <p>
+              This project is already under way, as such it is not specifically part of the Modern
+              Tooling effort. It is, however, important to have it available in time for some of
+              projects currently listed in «Priority Two».
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 0 (already accounted for).
+            </p>
+          </dd>
+          <dt>Moving Discourse</dt>
+          <dd>
+            <p>
+              We already have an experimental installation of Discourse, but we want to move it to
+              WebPlatform. This is essentially: reinstalling, exporting the data, redirecting.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@renoir
+            </p>
+          </dd>
+          <dt>Group Pages</dt>
+          <dd>
+            <p>
+              The manner in which groups manage their own pages today is appalling. The goal of this
+              project is to provide common infrastructure for them to be able to start reporting
+              on their work effectively. This has the added benefit that it can expose information
+              from groups straight to the unified feed (and then in turn to the dashboard).
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 1 month FTE.
+            </p>
+          </dd>
+          <dt>Developer landing page</dt>
+          <dd>
+            <p>
+              This is already in progress. It essentially requires some tweaking and then deployment
+              at a decent URL. It should not have to block on things like donations; as soon as the
+              content is good we can ship it, and then iterate as more information and functionality
+              becomes available.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: @@guillaume
+            </p>
+          </dd>
+          <dt>Guides So Far</dt>
+          <dd>
+            <p>
+              A general guide for the usage of GitHub, as well as guides for the tools listed in 
+              this category (including Echidna) need to be written.
+            </p>
+            <p class="est">
+              <strong>Estimate</strong>: 2-3 weeks FTE.
+            </p>
+          </dd>
+        </dl>
+      </section>
+      <section>
+        <h2>Second Priority</h2>
         <p>
           XXX
         </p>
+        <!--
+          - mailing list UI
+          - interactive specs
+          - live examples
+          - WebIDL checker integration
+          - tool to set up GitHub correctly/easily
+          - spec styles (bump?)
+          - Etherpad
+          - Collaborators access
+        -->
       </section>
       <!--
         XXX
@@ -606,7 +769,7 @@
           </p>
         </section>
         <section>
-          <h2>Notifier</h2>
+          <h2>Notifiers</h2>
           <p>
             Another tool that can plug into the unified feed is a notifier. Users can opt into
             being notified of various events by email (though, you guessed it, a dashboard widget).
