@@ -268,7 +268,7 @@
               This is already in progress. It essentially requires some tweaking and then deployment
               at a decent URL. It should not have to block on things like donations; as soon as the
               content is good we can ship it, and then iterate as more information and functionality
-              becomes available.
+              become available.
             </p>
             <p class="est">
               <strong>Estimate</strong>: 10 days FTE.
@@ -463,7 +463,7 @@
             later be integrated into the dashboard.
           </p>
           <p>
-            This also entail that both <code>dev.w3</code> and <code>dvcs.w3</code> should be phased
+            This also entails that both <code>dev.w3</code> and <code>dvcs.w3</code> should be phased
             out. No new repository should be created there and no new user granted access. Projects
             that are still active there should be moved (and redirected). Obviously the content
             already published that no one is touching will likely need to stay there, but it should
@@ -527,7 +527,7 @@
             The <a href="http://www.w3.org/2014/10/pubrules/">new PubRules</a> system
             (<a href="https://github.com/w3c/specberus">Specberus</a>) is a welcome improvement in
             the toolbox. It still needs some UI fixes and should be moved to a location not intended
-            to make it impossible to find but overall it should soon be able to replace the previous
+            to make it impossible to find, but overall it should soon be able to replace the previous
             instantiation.
           </p>
           <p>
@@ -535,13 +535,13 @@
             extremely hard to get information out of our documents. Even when they are correct, they
             are all different. The RDF export is a very partial view and borderline unusable. The
             data that is extracted into W3C’s systems cannot be obtained, and is partial as well.
-            Yet so much can be done with this information.
+            Yet so much could be done with this information.
           </p>
           <p>
             We need to progressively refine the <em>components</em> that make up a specification and
             to rethink them using modern HTML constructs for document semantics and metadata. Step
             by step we need to start unifying these constructs across the board (having tools
-            produce them and enforcing them through PubRules). Document structure and metadata needs
+            produce them and enforcing them through PubRules). Document structure and metadata need
             to become eventually regular enough that TR can be used as an API.
           </p>
         </section>
@@ -589,8 +589,8 @@
             Ideally, all definitions from all specifications should be globally available. This
             would make it possible to simply reference them in a specification tool source format
             and get the correct link and reference handled. It would enable the generation of
-            glossaries (we urgently need to phase out <a href="http://www.w3.org/2003/glossary/">the
-            current one</a>). We could expose a searchable interface that would make it possible for
+            glossaries. (We urgently need to phase out <a href="http://www.w3.org/2003/glossary/">the
+            current one</a>.) We could expose a searchable interface that would make it possible for
             people to find which specification defines what, and which make use of what concept or
             construct (something that would prove invaluable in coordination).
           </p>
@@ -617,7 +617,7 @@
             iterations and is generally considered good, but it can be improved.
           </p>
           <p>
-            It is currently managed by Tobie, it could be brought under W3C management.
+            Currently managed by Tobie, it could be brought under W3C management.
           </p>
           <p>
             It could use a front-end for adding resources and a few other niceties to integrate
@@ -636,7 +636,7 @@
           <p>
             Developers use continuous integration to make sure that there is a constant pressure
             towards quality rather than a last-minute rush — so should editors. There have been
-            experiments around this (using Travis’ integration with GitHub), they should be
+            experiments around this (using Travis’ integration with GitHub); they should be
             expanded and systematised.
           </p>
           <p>
@@ -646,7 +646,7 @@
             if it is known that it will contain a specification.
           </p>
           <p>
-            Several different tools can be called up on for quality checking; since they can be used
+            Several different tools can be called upon for quality checking; since they can be used
             on their own they are listed separately below and in the «Developer Tools» section.
           </p>
         </section>
@@ -690,34 +690,34 @@
           </p>
           <p>
             It is a common request to find out what has changed between two versions of a
-            specification, in fact producing a diff seems slated to be part of the new errata
+            specification. In fact, producing a diff seems slated to be part of the new errata
             management approach that the AB is investigating.
           </p>
           <p>
             This should be made automatic, and possibly specialised. Right now the HTML diff tool
             will produce as output a complete document, which can make the differences hard to find
             (e.g. a paragraph change in the whole HTML specification). It can also include a lot of
-            spurious differences (for instance if a section was added at the beginning, all the
-            section numbers come out as changes).
+            spurious differences. (For instance, if a section was added at the beginning, all the
+            section numbers come out as changes.)
           </p>
           <p>
             This tool could be specialised for specifications in such a way that ignorable
             differences would be ignored. Also, an affordance could be exposed in specifications
-            offering to see a diff between the version being looked at and any other version of this
+            offering to show a diff between the version being looked at and any other version of that
             document.
           </p>
         </section>
         <section>
           <h2>Dependency Tracker</h2>
           <p>
-            Specs depends on one another, but there is very little made to ensure these dependencies
+            Specs depends on one another, but there is very little done to ensure these dependencies
             are kept in sync; they are expected to be reviewed at transitions, and sometimes the
             link checker will spot a dependency gone wrong, but a more systematic approach would
             allow for better coordination across groups and reduce the risks for «monkey patching».
           </p>
           <p>
             A dependency tracker that would allow to visualise and report the dependencies between
-            spec, e.g. in terms of WebIDL interfaces, but also in terms of algorithms would be
+            specs, e.g. in terms of WebIDL interfaces but also in terms of algorithms, would be
             terrific. Ideally, they would lead to much more granular dependencies — a spec usually
             depends on a few items of a given spec, not the whole thing; assessing dependencies at
             the right granularity would be helpful for streamlining transitions on the 
@@ -755,7 +755,7 @@
           most users don’t need to know everything that they contain.
         </p>
         <p>
-          This leads to three high-level requirements for a modern system, from its users’s point of
+          This leads to three high-level requirements for a modern system, from its users’ point of
           view:
         </p>
         <ul>
@@ -840,7 +840,7 @@
           <h2>Notifiers</h2>
           <p>
             Another tool that can plug into the unified feed is a notifier. Users can opt into
-            being notified of various events by email (though, you guessed it, a dashboard widget).
+            being notified of various events by email (through, you guessed it, a dashboard widget).
             Likewise, IRC channels can be notified of specific events by a bot. The idea is that 
             this is extensible: the unified feed provides the data in a usage-agnostic manner; tools
             then piggy-back on it.
@@ -881,12 +881,12 @@
             <a href="https://slack.com/">Slack</a> or <a href="https://gitter.im/">gitter</a>. It
             is, however, often unknown to the younger generation or in fact more generally to people
             not strongly steeped in the open source culture of the past twenty years. As such, an
-            improved Web interface would be desirable (the current one is serviceable, but could do
-            with some freshening). One potential option here would be
+            improved Web interface would be desirable. (The current one is serviceable, but could do
+            with some freshening.) One potential option here would be
             <a href="https://github.com/erming/shout">Shout</a>. It is a client-server combo with a
             rich interface, and is entirely implemented in JS. Amongst its advantages are that it
             can remain connected to IRC even when you close your browser, it supports connecting as
-            the same user through multiple channels at once, and has a responsive layout that is
+            the same user through multiple channels at once, and it has a responsive layout that is
             well-suited to usage on a smartphone.
           </p>
           <p>
@@ -962,7 +962,7 @@
             far and wide.
           </p>
           <p>
-            There are numerous pad implementations, deploying this is largely a case of picking one
+            There are numerous pad implementations, so deploying this is largely a case of picking one
             that we like. A good pad should support:
           </p>
           <ul>
@@ -1022,8 +1022,8 @@
             </li>
             <li>
               Phase out Tracker. Issues should be linked to a project more than to a group. Action
-              items can be issues assigned to someone, and eventually tied to a milestone (the dates
-              on AIs are almost never heeded anyway).
+              items can be issues assigned to someone, and eventually tied to a milestone. (The dates
+              on AIs are almost never heeded anyway.)
             </li>
             <li>
               Move all issue tracking to GitHub. Having issues tied to projects makes up for tying
@@ -1154,8 +1154,8 @@
           <p>
             Having an automatically maintained map of the all the WebIDL interfaces that are
             developed across the Web platform would make it easier to navigate the organic structure
-            of Working Groups / Community Groups / etc., and would let groups discover more easily
-            ways other interfaces deal with specific patterns.
+            of Working Groups / Community Groups / etc., and would let groups more easily discover
+            ways that other interfaces deal with specific patterns.
           </p>
           <p>
             Both PLH and Dom have early versions of such a tool.
@@ -1197,7 +1197,7 @@
             There is ongoing work in exposing this through a simple landing page.
             The <a href="http://w3c.github.io/developers/">W3C developer page</a> aims to
             provide developers with a summary of all our open source tools and links to helpful
-            resources. It is currently in development, you can
+            resources. It is currently in development, and you can
             <a href="https://github.com/w3c/developers">contribute to it in its Github
             repository.</a>
           </p>
@@ -1340,8 +1340,8 @@
             a regular annoyance.
           </p>
           <p>
-            Dated space, of course, needs to die. There are exact seven people in the world who find
-            it usable, six of which are on the Team (the other one being DanC). It is maddening,
+            Dated space, of course, needs to die. There are exactly seven people in the world who find
+            it usable, six of whom are on the Team (the other one being DanC). It is maddening,
             distracting, confusing, and in violation of every single URL design best practice in
             use anywhere outside the Consortium’s walls.
           </p>
@@ -1363,7 +1363,7 @@
         <h2>Testing</h2>
         <p>
           Our testing infrastructure has become increasingly important. In general it is much more
-          recent that the rest of our tools and so less in need of modernising. But the setup can
+          recent than the rest of our tools and so less in need of modernising. But the setup can
           nevertheless be improved.
         </p>
         <section>
@@ -1379,7 +1379,7 @@
           </p>
           <p>
             The <a href="http://critic.hoppipolla.co.uk/">current Critic instance</a> is run by
-            James Graham on his personal server.It may be much better to host it on W3C.
+            James Graham on his personal server. It may be much better to host it on W3C.
           </p>
           <p>
             It may be worth investigating the use of <a href="https://reviewable.io/">Reviewable</a>
@@ -1389,7 +1389,7 @@
         <section>
           <h2>Automatic Browser Testing</h2>
           <p>
-            We have an existing system that allows people to run the (automated parts of the) test
+            We have an existing system that allows people to run (the automated parts of) the test
             suite continuously, without human intervention. Right now it has only been adopted by
             a couple of browser vendors.
           </p>
@@ -1508,7 +1508,7 @@
     <section>
       <h2>Principles for External Tool Integration</h2>
       <p>
-        It is this plans’s considered opinion that users should be encouraged to experiment with
+        It is this plan’s considered opinion that users should be encouraged to experiment with
         external tools if and when they find shortcomings in ours. Having said that, for an external
         tool to be considered acceptable it needs to fulfil the following basic needs:
       </p>
