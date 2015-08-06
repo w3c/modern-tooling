@@ -95,15 +95,72 @@ easily.
 
 ## Future Deliverables
 
+A number of things were listed in the Modern Tooling document that I believe are worth doing but
+haven't been done at this point.
+
 ### Notifiers
+
+Several people requested the ability to get notifications by email or on IRC for some events of
+interest. The general idea is to use the unified feed for that purpose, and have daemons that can
+rely on it in order to push notifications to email or IRC.
+
+The unified feed already knows of filters that provide a useful view over a subset of its content.
+That would probably be the selection mechanism as this keeps the notifiers simple: all they need to
+do is query a filter (and have a configuration that maps filter to IRC channel or to an email 
+address).
+
+There are then two ways to implement them. The simple way is a cron job which polls the filters. The
+more involved way, which I would have headed towards had I stayed on, would have been to have the
+unified feed essentially work with ZMQ (or similar) in order to dispatch pre-munged events when they
+occur. The latter is more initial work, but is cleaner and would prove more advantageous the more
+tools plug into it. The decision will have to be made by whoever picks this up.
 
 ### GitHub Backup
 
+The unified feed already backs up all GitHub information that is produced *except* the actual
+repositories. It is not necessarily a huge priority to back repositories up because by their
+nature people will have clones. That being said, it would be a plus.
+
+It would be easy to add a view on the unified feed data that would expose repository creation and
+commits (the information is already there). A cron job would query that and use the information to
+update its clones (likely using bare repositories and the mirror option).
+
 ### Group Pages
 
-See apiary as part of this.
+This was initially listed as a priority, but was replaced with the repository manager that got
+bumped up for the WICG needs.
+
+A subset of the use case, I would say the more useful subset, is already being addressed by the
+Apiary project (currently private, hence unlinked) that ddavis and tripu have been working on.
+
+For the immediate future I think that the focus should be on Apiary. Once that has shipped and is
+being used, it will be interesting to revisit follow-up use cases but they are of a lesser priority
+than the information that Apiary exposes (which is what's in the W3C DB all nicely up to date and
+most frequently outdated on group pages).
 
 ### Mailing List Interface
+
+This is by far the most complicated part of the project. The goal is to expose a mailing list 
+archive interface that is up to speed with modern expectations, similar to what was done with
+[ES Discuss](https://esdiscuss.org/).
+
+There is no point in undertaking this project unless it is staffed properly, it is not something
+that can easily be done on the side. Email is hard in general, and the volume of data makes it
+harder, as likely do the performance requirements for ingestion.
+
+My plan was as follows. Use [EmailJS](http://emailjs.org/) to ingest both arriving email and the
+archives into CouchDB (but keeping the attachments on the FS). EmailJS is a tried solution, it
+notably powers the email system in FirefoxOS.
+
+Once in CouchDB, views can be used to expose individual posts, threads, lists, time-based windows
+(without the month rollover issues we have with threading today), and possibly a number of other
+things of interest. FTI would remain in Sphinx where it is today (though eventually the URLs it
+returns might change).
+
+On top of this, a React application could be built (isomorphic if need be) to explore and render the
+email.
+
+My expectation was that this would take me two or three months full time to put together.
 
 ### Discourse
 
@@ -114,3 +171,5 @@ See apiary as part of this.
 ### WebIDL Checker in Specberus
 
 ### Etherpad
+
+### WBS Prettification
