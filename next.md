@@ -164,12 +164,55 @@ My expectation was that this would take me two or three months full time to put 
 
 ### Discourse
 
+There are two topics here. One is whether the W3C needs to have an “official” Discourse instance
+which it can use for its groups and the such. The other is what to do with the content of the 
+initial Discourse experiment, which was mostly about getting new ideas from the community.
+
+Since the WICG has been launched, in part as a continuation of the broader developer involvement
+project of which Discourse was a part, they have inherited that content. Whether the content should 
+stay there or be moved to W3C is a “political” decision that is outside the boundaries of this
+document. In either case it's a straightforward step to export/import content.
+
+Installing Discourse is simple; the bigger questions are about the fact that the stack does not
+match what the systeam usually uses.
+
 ### Interactivity in Specifications
+
+Specifications should be spruced up with some interactive features such as finding all usage spots
+for definitions, easy linking to sections, bugs can be filed from a selection, etc. There is value
+in having a common library for this so that people don't have to think about it, tools can generate
+the right markup, users can expect consistency.
+
+I don't think that this falls to the systeam. There was an embryonic start for this called
+[specstatic](https://github.com/darobin/specstatic) which can be picked up. My recommendation is to
+fold this into the TR Design project (by filing a bug) and calling it a day.
 
 ### Live Examples in Specifications
 
+The idea here is to make it possible to embed live examples in specifications, using a system
+similar to [Dabblet](http://code.webplatform.org/). This would be extremely valuable in making our
+specifications more useful and more readily understandable as they get implemented.
+
+I believe that this can be folded into TR Design as well.
+
 ### WebIDL Checker in Specberus
+
+Specberus has the ability to bring in external checkers; it would be useful for it to plug into the
+WebIDL Checker. This can probably be handled as a bug on Specberus. PLH and Dom have registered
+interest in doing this as a geek week project.
 
 ### Etherpad
 
+It would be very useful to have access to Etherpads, that could make use of W3C's LDAP, etc. The
+alternative is that people use random pads elsewhere, we lose content. I believe that this is
+something that the systeam can carry out at some point, on its own schedule.
+
 ### WBS Prettification
+
+Quite a few of our users find WBS daunting. One first step that we could take would be to re-style
+it. I believe that this can be done relatively easily, simply by applying some CSS. Further 
+improvements can probably be made using some script, but just styling could go a long way.
+
+I don't believe that this is a huge undertaking. Dom has indicated interest in doing this as a 
+geek week project.
+
