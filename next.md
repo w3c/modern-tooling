@@ -21,9 +21,9 @@ no work on them will need to be done.
 
 ### GitHub Guide
 
-A [Guide to Using GitHub with W3C](http://w3c.github.io/) is in the works. At this point it only has
-a landing page, but I will be adding content in the coming days and weeks. After I've added content,
-it ought to be usable but will certainly require some maintenance and the occasional addition.
+A [Guide to Using GitHub with W3C](http://w3c.github.io/) has been produced. It can certainly
+welcome more data, but hopefully the first stab that is there is enough to get the ball rolling and
+to make it worth maintaining.
 
 This is *not* something that I would expect the systeam to take over.
 
@@ -77,8 +77,7 @@ API.
 
 Hatchery has running versions of both the [unified feed, aka 
 Pheme](https://labs.w3.org/hatchery/pheme/) and the [dashboard, aka 
-Midgard](https://labs.w3.org/hatchery/midgard/). They are operational but I will be modifying some
-parts relatively extensively.
+Midgard](https://labs.w3.org/hatchery/midgard/). They are operational.
 
 If this tool gets used regularly it will require maintenance, and will likely require some features
 to be added to it (at the very least some new filters, which are very easy to write). If it is 
@@ -92,6 +91,14 @@ At some point this should definitely be moved to a URL that is *not* my hatchery
 I will be writing a specific and detailed document about installing and running it, as well as a
 map of the code and details about how to work on it so that someone jumping in can do so (hopefully)
 easily.
+
+### GitHub Backup
+
+The unified feed already backs up all GitHub information that is produced *except* the actual
+repositories. In order to back the repositories up, the
+[gh-backup](https://github.com/w3c/gh-backup) tool is available. It relies (lightly) on the unified
+feed in order to easily know which repositories have changed. It can run autonomously and maintain
+a full backup of the *public* repositories (private ones are another matter, not handled).
 
 ## Future Deliverables
 
@@ -114,16 +121,6 @@ more involved way, which I would have headed towards had I stayed on, would have
 unified feed essentially work with ZMQ (or similar) in order to dispatch pre-munged events when they
 occur. The latter is more initial work, but is cleaner and would prove more advantageous the more
 tools plug into it. The decision will have to be made by whoever picks this up.
-
-### GitHub Backup
-
-The unified feed already backs up all GitHub information that is produced *except* the actual
-repositories. It is not necessarily a huge priority to back repositories up because by their
-nature people will have clones. That being said, it would be a plus.
-
-It would be easy to add a view on the unified feed data that would expose repository creation and
-commits (the information is already there). A cron job would query that and use the information to
-update its clones (likely using bare repositories and the mirror option).
 
 ### Group Pages
 
