@@ -1,6 +1,6 @@
 ## Context
 
-This documentation contains a list of use cases/requirements for a W3C community-wide calendaring system. It will help the W3C community to organize itself and simplify their handling of meetings. It is intended for W3C Groups at large and to be viewable by a large set of calendar clients.
+This document contains a list of use cases/requirements for a W3C community-wide calendaring system. It will help the W3C community to organize itself and simplify their handling of meetings. It is intended for W3C Groups at large and to be viewable by a large set of calendar clients.
 
 
 ## Use cases
