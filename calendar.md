@@ -25,7 +25,9 @@ This document contains a list of use cases/requirements for a W3C community-wide
 ## Requirements
 
 1. For a Group Chair/TC, using the W3C website
-   1. Create, and view group meetings
+   1. Create, and view group meetings. Creating calendar entries needs to be easy, not idiosyncratic to
+      some edge tool. Many people will need to do this frequently and it
+      should not become an administrative burden.
    1. Use one-time, weekly, bi-weekly, monthly recurrence, with possible exception dates, or recurrence end date.
    1. Update, move, delete each meeting occurrence at any time
    1. Associate the meeting to the group, a task force, or a subset of group individuals
@@ -36,12 +38,16 @@ This document contains a list of use cases/requirements for a W3C community-wide
    1. Provide attendance instructions to meeting participants (with Member-only link for WebEx passcode/Hangout link, if any?)
    1. Link to agenda/notes/minutes for each meeting occurrence
    1. [nice to have] Optionally receive notification if a participant confirm/regret
+   1. [nice to have] Write access from external clients (ical?)
 1. For meeting participants:
    1. View group meetings using the W3C website
    1. Add/access/synchronize group meetings to a local calendaring client, eg iCal, Google calendar, SOGo, mobile platform, etc. (use iCalendar? https://tools.ietf.org/html/rfc5545 and https://tools.ietf.org/html/rfc5546)
+   1. View group meetings offline (sometime participants are offline when they try to join)
    1. From a meeting occurrence, navigate easily to attendance instructions, agenda, minutes/notes
+   1. the meeting information should be easily discoverable in plain text, when receiving invitation (and not just ical)
+   1. Regrets notifications should not be distributed to everybody else subscribed to the event.
    1. [nice to have] Confirm/Regret on calendar invitation
-   1. [nice to have] Optionally, deactivate receiving email meeting invitations/reminders/alarms
+   1. [nice to have] Automatic meeting reminders need to be opt-in, and ability to easily opt-out if they have opted in.
 1. For W3C community users
    1. [nice to have] User tailored calendar ideally, e.g. https://www.w3.org/users/myprofile/calendar (with all events of my groups, could be a redirect to another application, users can view the calendar or subscribe to one or a set of calendars), with ability to filter events
    1. [nice to have] Specific non-W3C users read access (such as family)
