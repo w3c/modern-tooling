@@ -60,6 +60,7 @@ This document contains a list of use cases/requirements for a W3C community-wide
    1. TLS support, W3C account support
    1. Group database integration (DBWG). Support for any W3C groups such as WG, IG, AB, TAG, CG, and various task forces
 
+NOTE: requirements may be met by a combination of off-the-shelf tools.
 
 ## Guidelines / documentation
 
