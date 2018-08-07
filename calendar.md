@@ -28,7 +28,11 @@ This document contains a list of use cases/requirements for a W3C community-wide
    1. Create, and view group meetings. Creating calendar entries needs to be easy, not idiosyncratic to
       some edge tool. Many people will need to do this frequently and it
       should not become an administrative burden.
-   1. Use one-time, weekly, bi-weekly, monthly recurrence, with possible exception dates, or recurrence end date.
+   1. Use one-time or recurrence patterns:
+      1. weekly, bi-weekly, monthly recurrence
+         1. "nth XXX-day" (e.g. 1st and 3rd Monday) of the month as well as the Xth of each month.
+      1. allow exception dates
+      1. allow recurrence end date
    1. Update, move, delete each meeting occurrence at any time
    1. Associate the meeting to the group, a task force, or a subset of group individuals
    1. Add non-group participants to meeting occurrence/recurrence
