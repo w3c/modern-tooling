@@ -74,6 +74,12 @@ NOTE: requirements may be met by a combination of off-the-shelf tools.
 * [support] Providing support for people who have a hard time with calendar systems (user doc)
 * [support] Explain how to share a given calendar and how to integrate it with a third party calendar application.
 
+## Off-the-shelf tools
+
+* [SOGo](https://sogo.nu/)
+* [Google calendars](https://www.google.com/calendar)
+* [Yandex calendars](https://calendar.yandex.com/)
+* Anything else we should look at?
 
 ## Others
 
