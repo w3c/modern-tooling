@@ -42,6 +42,7 @@ This document contains a list of use cases/requirements for a W3C community-wide
    1. Provide attendance instructions to meeting participants (with Member-only link for WebEx passcode/Hangout link, if any?)
    1. Link to agenda/notes/minutes for each meeting occurrence
    1. [nice to have] Optionally receive notification if a participant confirm/regret
+      1. if so, ability to specify an alternate address or web dashboard for those notifications
    1. [nice to have] Write access from external clients (ical?)
 1. For meeting participants:
    1. View group meetings using the W3C website
