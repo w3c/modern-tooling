@@ -25,9 +25,8 @@ __Features__
 * One-time or recurrent [weekly, bi-weekly, monthly, every n-th xxx-day, n-th of the month, support Excluded date, support end-date]. 
 Let the user set the meeting base TZ (no default value)
 * Create / update (not the date) / move (=update the time, date, or recurrence) / delete from web interface: 
-Changes can trigger email reminders. [more details]
-* Link to one or several W3C groups (attendees) 
-  Warning on guest group for an occurrence of a recurring meeting.
+Changes can trigger email reminders. [more details to be specified]
+* Tie a meeting to one (or several?) W3C groups (attendees). Possibility to add a guest group for an occurrence of a recurring meeting?
 * Add guests -- Should this be limited to guest individuals or also handle guest groups?
 * Support for Time Zones (at least using link to TZ converter) -- The displayed timezone should be configurable in the web 
 view. An improvement would be to select by default the user timezone (it would be stored in his W3C user profile).
@@ -42,9 +41,7 @@ view. An improvement would be to select by default the user timezone (it would b
 * Meeting invitation (aka "first reminder") should be sent to the public group mailing list, the invitation should not 
 contain sensible info (eg teleconf link or password), which will be displayed on the calendar event page only for an 
 authentified user.
-* Choice of reminders/notifications of updates on event (eg agenda updated, new time, event canceled, ...): Email reminders can be sent 
-to users directly and not to the group mailing list. Users can set VALARM in their own tools, opt-out from email reminders
-(in their user profile), or follow the meeting organizer choice (default).
+* Choice of reminders/notifications of updates on event (eg agenda updated, new time, event canceled, ...): Email reminders can be sent to users directly and not to the group mailing list. Users can set VALARM in their own tools, opt-out from email reminders (in their user profile), or follow the meeting organizer choice (default).
 
 
 Viewing meetings / events
